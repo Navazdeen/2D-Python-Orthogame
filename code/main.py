@@ -1,7 +1,7 @@
 import pygame
 import sys
 from utils import settings
-from sprites import Player, Generic
+from sprites import Player, Generic, EnemySimple, EnemyAdvanced
 from random import randint
 from pytmx.util_pygame import load_pygame
 
@@ -36,6 +36,32 @@ class Game:
             },
             groups=[self.all_sprites],
             z=1,
+            collide_sprites=self.collide_sprites,
+        )
+
+        EnemySimple(
+            pos=(200, 200),
+            frames=[
+                pygame.Surface((32, 32)),
+                pygame.Surface((32, 32)),
+                pygame.Surface((32, 32)),
+            ],
+            groups=self.all_sprites,
+            z=1,
+            player=self.player,
+            collide_sprites=self.collide_sprites,
+        )
+
+        EnemyAdvanced(
+            pos=(300, 300),
+            frames=[
+                pygame.Surface((32, 32)),
+                pygame.Surface((32, 32)),
+                pygame.Surface((32, 32)),
+            ],
+            groups=self.all_sprites,
+            z=1,
+            player=self.player,
             collide_sprites=self.collide_sprites,
         )
 
