@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "mystic-mountain"
+version = "0.1.0"
+description = "Game Orthogonal graphics"
+authors = ["NavazdeenS <navazdeen1999@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pygame = "^2.6.1"
+dynaconf = "^3.2.6"
+PyTMX = "^3.32"
+
+[tool.poetry.group.dev.dependencies]
+cookiecutter = "^2.6.0"
+black = "^24.10.0"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
